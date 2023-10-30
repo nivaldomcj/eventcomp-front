@@ -76,7 +76,7 @@ by_month.index = pd.PeriodIndex(by_month.index)
 sbc_by_month = by_month.rename_axis('mes').reset_index(name='Total')
 
 
-wikicfp_groupby = dados.groupby(['location'])['location'].count().sort_values(ascending=False).reset_index(name='Total')
+# wikicfp_groupby = dados.groupby(['location'])['location'].count().sort_values(ascending=False).reset_index(name='Total')
 
 
 # Inicialização do aplicativo Dash
@@ -84,7 +84,7 @@ external_stylesheets = [dmc.theme.DEFAULT_COLORS]
 
 app = dash.Dash(__name__)
 
-app.title = "Dashboard MetaEventos"
+app.title = "Dashboard EventComp"
 
 
 # definição dos gráficos básicos
@@ -329,7 +329,7 @@ app.layout = html.Div(
                         html.Div([
                                 dl.Map([
                                     dl.TileLayer(),
-                                    dl.MarkerClusterGroup(
+                                    dl.GeoJSON(
                                         id='marker-cluster',
                                         children=[
                                             dl.Marker(position=[row['lat'], row['long']], children=[
