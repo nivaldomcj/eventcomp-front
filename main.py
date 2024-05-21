@@ -22,7 +22,7 @@ from datetime import datetime as dt
 # Criação do DataFrame de exemplo
 
 # Tratamento dos dados dos eventos SBC
-sbc = pd.read_json('../metaevents/sbc_eventos.json')
+sbc = pd.read_json('./metaevents/sbc_eventos.json')
 sbc.dropna(subset=['location'], inplace=True)
 
 current_location = dcc.Geolocation("geolocation")
