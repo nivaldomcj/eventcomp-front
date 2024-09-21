@@ -83,6 +83,7 @@ sbc_by_month = by_month.rename_axis('mes').reset_index(name='Total')
 external_stylesheets = [dmc.theme.DEFAULT_COLORS]
 
 app = dash.Dash(__name__)
+server = app.server
 
 app.title = "Dashboard EventComp"
 
